@@ -24,4 +24,17 @@ public class UserService {
 		return obj.get();
 		
 	}
+	
+	public User createUser(User user) {
+		User us = new User();
+		us.setName(user.getName());
+		us.setEmail(user.getEmail());
+		us.setPhone(user.getPhone());
+		us.setPassword(user.getPassword());
+		
+		userRepository.save(us);
+		
+		return us;
+		
+	}
 }
